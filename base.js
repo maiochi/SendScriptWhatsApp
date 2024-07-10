@@ -5,7 +5,8 @@ async function enviarScript(scriptText){
 	textarea = main.querySelector(`div[contenteditable="true"]`)
 	
 	if(!textarea) throw new Error("Não há uma conversa aberta")
-	
+	var enviadas = 0;
+	var quantidade = lines.length;
 	for(const line of lines){
 		enviadas++;
 		console.info('['+enviadas+'/'+quantidade+'] '+line);
