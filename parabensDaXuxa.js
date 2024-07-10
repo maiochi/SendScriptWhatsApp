@@ -3,7 +3,9 @@ async function enviarScript(scriptText){
 	const lines = scriptText.split(/[\n\t]+/).map(line => line.trim()).filter(line => line);
 	main = document.querySelector("#main"),
 	textarea = main.querySelector(`div[contenteditable="true"]`)
-	
+	var enviadas = 0;
+	var quantidade = lines.length;
+
 	if(!textarea) throw new Error("Não há uma conversa aberta")
 	
 	for(const line of lines){
